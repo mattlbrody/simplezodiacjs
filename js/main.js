@@ -62,7 +62,7 @@ var zodiac = [
 	}
 ];
 // This is code so the enter key also fires (runs/invokes/instantiates) the function
-var btn = document.getElementById('userdata');
+var btn = document.getElementById('userinput');
 btn.addEventListener('keypress', function enterKey(e) {
 	if(e.keyCode == 13) {
 		horoscope();
@@ -72,15 +72,15 @@ btn.addEventListener('keypress', function enterKey(e) {
 // function to determine user horoscope, function fires on user clicking button line 30 index.html
 function horoscope() {
 	// store the tag with id="sign" in var userdata
-	var userdata = document.getElementById("userdata");
+	var userinput = document.getElementById("userinput");
 
 	// loop through zodiac array one item at a time
 	for(var i = 0; i < zodiac.length; i = i + 1) {
 
 		// if the value the user typed in, changed to all lowercase letters, is equal to one of our signs, then we do something
-		if(userdata.value.toLowerCase() === zodiac[i].sign) {
+		if(userinput.value.toLowerCase() === zodiac[i].sign) {
 			// get element with id="userSign" and change the text to the user input
-			document.getElementById("yourSign").textContent = userdata.value;
+			document.getElementById("yourSign").textContent = userinput.value;
 			// get element with id="icon" and change source attribute to current zodiac image path
 			document.getElementById("icon").src = zodiac[i].image;
 			// // get element with id="yourHoroscope" and change the content to this concatenated string
